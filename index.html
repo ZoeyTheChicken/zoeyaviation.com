@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zoey Aviation</title>
+  <meta name="description" content="Zoey Aviation – planespotting, aviation photography, and YouTube content." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-xl font-extrabold tracking-tight">Zoey Aviation</h1>
+      <nav class="space-x-6 text-sm font-medium">
+        <a href="#home" class="hover:text-sky-400">Home</a>
+        <a href="#photos" class="hover:text-sky-400">Photos</a>
+        <a href="#youtube" class="hover:text-sky-400">YouTube</a>
+        <a href="#about" class="hover:text-sky-400">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-sky-900/20 to-zinc-950"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-32">
+      <h2 class="text-5xl md:text-6xl font-extrabold leading-tight">
+        Aviation, from a <span class="text-sky-400">different perspective.</span>
+      </h2>
+      <p class="mt-6 max-w-2xl text-zinc-300 text-lg">
+        Planespotting, aviation photography, and YouTube content from Zoey Aviation.
+        Over 1K subscribers and climbing.
+      </p>
+      <div class="mt-10 flex gap-4">
+        <a href="#photos" class="px-6 py-3 rounded-xl bg-sky-500 text-black font-semibold hover:bg-sky-400">View Photos</a>
+        <a href="#youtube" class="px-6 py-3 rounded-xl border border-zinc-700 hover:border-sky-400">YouTube</a>
+        <a href="https://www.flightradar24.com/airport/psm" class="px-6 py-3 rounded-xl border border-zinc-800">My Local Airport</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PHOTOS -->
+  <section id="photos" class="max-w-7xl mx-auto px-4 py-24">
+    <h3 class="text-3xl font-bold mb-4">Featured Shots</h3>
+    <p class="text-zinc-400 mb-10">Recent planespotting highlights</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- CARD -->
+      <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
+        <img src="/img/2026jan/IMG_7868.HEIC" alt="Aircraft photo" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h4 class="font-semibold">January 2026</h4>
+          <p class="text-sm text-zinc-400">LCI • Private jet up close</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
+        <img src="/img/2025dec/IMG_7791.jpg" alt="Aircraft photo" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h4 class="font-semibold">December 2025</h4>
+          <p class="text-sm text-zinc-400">BOS • A rare double landing!</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
+        <img src="/img/2025dec/IMG_7746.jpg" alt="Aircraft photo" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h4 class="font-semibold">December 2025</h4>
+          <p class="text-sm text-zinc-400">MHT • An Avelo Boeing 737-700</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section id="youtube" class="bg-zinc-900/40 border-y border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 class="text-3xl font-bold mb-4">YouTube Channel</h3>
+        <p class="text-zinc-300 mb-6">
+          Planespotting videos, rare aircraft, airline ops, and aviation nerd content.
+        </p>
+        <a href="https://www.youtube.com/@zoeyaviation" target="_blank" class="inline-block px-6 py-3 rounded-xl bg-red-600 font-semibold hover:bg-red-500">Visit Channel</a>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-zinc-800">
+<iframe
+  class="w-full h-80 rounded-2xl border border-zinc-800"
+  src="https://www.youtube.com/embed/videoseries?list=PLFK3iLdFr59fb0RZQp0QYVzM5Vvi_s2P2"
+  allowfullscreen>
+</iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="max-w-5xl mx-auto px-4 py-24">
+    <h3 class="text-3xl font-bold mb-4">About Zoey Aviation</h3>
+    <p class="text-zinc-300 leading-relaxed">
+      Zoey Aviation is a planespotting and aviation photography brand focused on
+      capturing real airline operations, rare aircraft, and clean cinematic shots.
+      Built by an aviation nerd, for aviation nerds.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+<section id="contact" class="bg-zinc-900/40 border-t border-zinc-800">
+  <div class="max-w-5xl mx-auto px-4 py-24 text-center">
+    <h3 class="text-3xl font-bold mb-4">Get in Touch</h3>
+    <p class="text-zinc-300 mb-6">
+      Questions, collabs, or just aviation nerd stuff?  
+      Email me anytime.
+    </p>
+
+    <a
+      href="mailto:zoey@zoeyaviation.com"
+      class="inline-block px-6 py-3 rounded-xl bg-sky-500 text-black font-semibold hover:bg-sky-400"
+    >
+      zoey@zoeyaviation.com
+    </a>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-zinc-800 bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-4 py-8 text-sm text-zinc-500 flex justify-between">
+      <span>© 2026 Zoey Aviation - Updated 1/15/26</span>
+      <span>zoeyaviation.com</span>
+    </div>
+  </footer>
+
+</body>
+</html>
