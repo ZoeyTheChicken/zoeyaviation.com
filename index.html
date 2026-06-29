@@ -13,6 +13,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.airshow-banner {
+  animation:
+    fadeUp .8s ease-out,
+    float 4s ease-in-out infinite 1s;
+}
+
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
@@ -35,6 +61,20 @@
   <section id="home" class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-sky-900/20 to-zinc-950"></div>
     <div class="relative max-w-7xl mx-auto px-4 py-32">
+<div class="airshow-banner inline-flex flex-col gap-1 mb-8 rounded-2xl border border-sky-500/40 bg-sky-500/10 px-6 py-4 backdrop-blur">
+    <span class="text-xs uppercase tracking-[0.25em] text-sky-300 font-bold">
+        Upcoming Airshow
+    </span>
+
+    <span class="text-lg font-bold text-white">
+        ✈ Great State of Maine Air Show 2026 - July 11-12, 2026!
+    </span>
+
+    <span class="text-zinc-300 text-sm">
+        Blue Angels • Red Arrows • F-35 Demonstration Team • C-17 Demonstration • P-51 Warbird Thunder • And More!
+    </span>
+</div>
+
       <h2 class="text-5xl md:text-6xl font-extrabold leading-tight">
         Aviation, from a <span class="text-sky-400">different perspective.</span>
       </h2>
@@ -51,37 +91,116 @@
   </section>
 
   <!-- FEATURED PHOTOS -->
-  <section id="photos" class="max-w-7xl mx-auto px-4 py-24">
-    <h3 class="text-3xl font-bold mb-4">Featured Shots</h3>
-    <p class="text-zinc-400 mb-10">Recent planespotting highlights</p>
+<section id="photos" class="max-w-7xl mx-auto px-4 py-24">
+  <h3 class="text-3xl font-bold mb-4">Featured Shots</h3>
+  <p class="text-zinc-400 mb-10">Recent planespotting highlights</p>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- CARD -->
-      <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
-        <img src="/img/2026jan/IMG_7868.HEIC" alt="Aircraft photo" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h4 class="font-semibold">January 2026</h4>
-          <p class="text-sm text-zinc-400">LCI • Private jet up close</p>
-        </div>
-      </div>
+  <div class="grid md:grid-cols-3 gap-6">
 
-      <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
-        <img src="/img/2025dec/IMG_7791.jpg" alt="Aircraft photo" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h4 class="font-semibold">December 2025</h4>
-          <p class="text-sm text-zinc-400">BOS • A rare double landing!</p>
-        </div>
-      </div>
+    <!-- CARD 1 -->
+    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
+      <img src="/img/2026june/img1.JPG" alt="Aircraft photo" class="w-full h-56 object-cover">
+      <div class="p-5">
+        <h4 class="font-semibold">June 2026</h4>
+        <p class="text-sm text-zinc-400">
+          BOS • Lufthansa's 100th anniversary livery Airbus A380 (D-AIMH)
+        </p>
 
-      <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
-        <img src="/img/2025dec/IMG_7746.jpg" alt="Aircraft photo" class="w-full h-56 object-cover">
-        <div class="p-5">
-          <h4 class="font-semibold">December 2025</h4>
-          <p class="text-sm text-zinc-400">MHT • An Avelo Boeing 737-700</p>
-        </div>
+        <a href="/img/2026june/img1.JPG"
+           target="_blank"
+           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
+          View Full Quality
+        </a>
       </div>
     </div>
-  </section>
+
+    <!-- CARD 2 -->
+    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
+      <img src="/img/2026june/img2.png" alt="Aircraft photo" class="w-full h-56 object-cover">
+      <div class="p-5">
+        <h4 class="font-semibold">June 2026</h4>
+        <p class="text-sm text-zinc-400">
+          BOS • A British Airways Airbus A380
+        </p>
+
+        <a href="/img/2026june/img2.png"
+           target="_blank"
+           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
+          View Full Quality
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
+      <img src="/img/2026june/img3.png" alt="Aircraft photo" class="w-full h-56 object-cover">
+      <div class="p-5">
+        <h4 class="font-semibold">June 2026</h4>
+        <p class="text-sm text-zinc-400">
+          BOS • An Iberia Airbus A321XLR
+        </p>
+
+        <a href="/img/2026june/img3.png"
+           target="_blank"
+           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
+          View Full Quality
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
+      <img src="/img/2026june/img4.png" alt="Aircraft photo" class="w-full h-56 object-cover">
+      <div class="p-5">
+        <h4 class="font-semibold">June 2026</h4>
+        <p class="text-sm text-zinc-400">
+          BOS • A Porter Embraer E195-E2, somewhat rare in the US, as Embraer E2's are not flown by any US airline yet.
+        </p>
+
+        <a href="/img/2026june/img4.png"
+           target="_blank"
+           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
+          View Full Quality
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
+      <img src="/img/2026june/IMG_1927.JPG" alt="Aircraft photo" class="w-full h-56 object-cover">
+      <div class="p-5">
+        <h4 class="font-semibold">June 2026</h4>
+        <p class="text-sm text-zinc-400">
+          BOS • A rare Sunwing livery Boeing 737 MAX 8, rare due to WestJet acquiring Sunwing and repainting the majority of aircraft in this livery.
+        </p>
+
+        <a href="/img/2026june/IMG_1927.JPG"
+           target="_blank"
+           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
+          View Full Quality
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
+      <img src="/img/2026june/IMG_1363.JPG" alt="Aircraft photo" class="w-full h-56 object-cover">
+      <div class="p-5">
+        <h4 class="font-semibold">June 2026</h4>
+        <p class="text-sm text-zinc-400">
+          BOS • A Southwest Airlines Boeing 737-800.
+        </p>
+
+        <a href="/img/2026june/IMG_1363.JPG"
+           target="_blank"
+           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
+          View Full Quality
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- YOUTUBE -->
   <section id="youtube" class="bg-zinc-900/40 border-y border-zinc-800">
@@ -89,7 +208,7 @@
       <div>
         <h3 class="text-3xl font-bold mb-4">YouTube Channel</h3>
         <p class="text-zinc-300 mb-6">
-          Planespotting videos, rare aircraft, airline ops, and aviation nerd content.
+          Planespotting, airshow photography and videography, and more aviation content!
         </p>
         <a href="https://www.youtube.com/@zoeyaviation" target="_blank" class="inline-block px-6 py-3 rounded-xl bg-red-600 font-semibold hover:bg-red-500">Visit Channel</a>
       </div>
@@ -107,9 +226,7 @@
   <section id="about" class="max-w-5xl mx-auto px-4 py-24">
     <h3 class="text-3xl font-bold mb-4">About Zoey Aviation</h3>
     <p class="text-zinc-300 leading-relaxed">
-      Zoey Aviation is a planespotting and aviation photography brand focused on
-      capturing real airline operations, rare aircraft, and clean cinematic shots.
-      Built by an aviation nerd, for aviation nerds.
+      I capture high quality aviation photography and videography, focusing on planespotting, airshows, and other aviation events.
     </p>
   </section>
 
@@ -118,7 +235,7 @@
   <div class="max-w-5xl mx-auto px-4 py-24 text-center">
     <h3 class="text-3xl font-bold mb-4">Get in Touch</h3>
     <p class="text-zinc-300 mb-6">
-      Questions, collabs, or just aviation nerd stuff?  
+      Questions, concerns, or anything else?
       Email me anytime.
     </p>
 
@@ -134,7 +251,7 @@
   <!-- FOOTER -->
   <footer class="border-t border-zinc-800 bg-zinc-950">
     <div class="max-w-7xl mx-auto px-4 py-8 text-sm text-zinc-500 flex justify-between">
-      <span>© 2026 Zoey Aviation - Updated 1/15/26</span>
+      <span>© 2026 Zoey Aviation - Updated 6/29/2026</span>
       <span>zoeyaviation.com</span>
     </div>
   </footer>
