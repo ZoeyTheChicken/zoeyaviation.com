@@ -13,33 +13,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-@keyframes float {
-  0%,100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.airshow-banner {
-  animation:
-    fadeUp .8s ease-out,
-    float 4s ease-in-out infinite 1s;
-}
-
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .airshow-banner {
+      animation: fadeUp .8s ease-out, float 4s ease-in-out infinite 1s;
+    }
     body { font-family: 'Inter', sans-serif; }
+    /* fix card grid consistency */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .photo-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      transition: border-color 0.2s;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-card .card-body {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .photo-card .card-body p {
+      flex: 1;
+    }
+    .photo-card .card-body a {
+      align-self: flex-start;
+      margin-top: 0.75rem;
+    }
+    /* fix hero alignment */
+    .hero-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-center h2 {
+      max-width: 900px;
+    }
+    .hero-center p {
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-center .flex {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 640px) {
+      .hero-center h2 {
+        font-size: 2.5rem;
+      }
+    }
   </style>
 </head>
 <body class="bg-zinc-950 text-zinc-100">
@@ -57,154 +101,183 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-sky-900/20 to-zinc-950"></div>
-    <div class="relative max-w-7xl mx-auto px-4 py-32">
-<div class="airshow-banner inline-flex flex-col gap-1 mb-8 rounded-2xl border border-sky-500/40 bg-sky-500/10 px-6 py-4 backdrop-blur">
-    <span class="text-xs uppercase tracking-[0.25em] text-sky-300 font-bold">
-        Upcoming Airshow
-    </span>
-
-    <span class="text-lg font-bold text-white">
-        ✈ Great State of Maine Air Show 2026 - July 11-12, 2026!
-    </span>
-
-    <span class="text-zinc-300 text-sm">
-        Blue Angels • Red Arrows • F-35 Demonstration Team • C-17 Demonstration • P-51 Warbird Thunder • And More!
-    </span>
-</div>
-
-      <h2 class="text-5xl md:text-6xl font-extrabold leading-tight">
-        Aviation, from a <span class="text-sky-400">different perspective.</span>
-      </h2>
-      <p class="mt-6 max-w-2xl text-zinc-300 text-lg">
-        Planespotting, aviation photography, and YouTube content from Zoey Aviation.
-        Over 1K subscribers and climbing.
-      </p>
-      <div class="mt-10 flex gap-4">
-        <a href="#photos" class="px-6 py-3 rounded-xl bg-sky-500 text-black font-semibold hover:bg-sky-400">View Photos</a>
-        <a href="#youtube" class="px-6 py-3 rounded-xl border border-zinc-700 hover:border-sky-400">YouTube</a>
-        <a href="https://www.flightradar24.com/airport/psm" class="px-6 py-3 rounded-xl border border-zinc-800">My Local Airport</a>
-      </div>
+  <!-- HERO / HOME -->
+  <section id="home" class="max-w-7xl mx-auto px-4 py-20 md:py-28 hero-center">
+    <h2 class="text-5xl md:text-6xl font-extrabold leading-tight">
+      Aviation, from a <span class="text-sky-400">different perspective.</span>
+    </h2>
+    <p class="mt-6 text-zinc-300 text-lg">
+      Planespotting, aviation photography, and YouTube content from Zoey Aviation.
+      <br>More than 1K subscribers and climbing.
+    </p>
+    <div class="mt-10 flex gap-4 flex-wrap justify-center">
+      <a href="#photos" class="px-6 py-3 rounded-xl bg-sky-500 text-black font-semibold hover:bg-sky-400">View Photos</a>
+      <a href="#youtube" class="px-6 py-3 rounded-xl border border-zinc-700 hover:border-sky-400">YouTube</a>
+      <a href="https://www.flightradar24.com/airport/psm" class="px-6 py-3 rounded-xl border border-zinc-800">My Local Airport</a>
     </div>
   </section>
 
   <!-- FEATURED PHOTOS -->
-<section id="photos" class="max-w-7xl mx-auto px-4 py-24">
-  <h3 class="text-3xl font-bold mb-4">Featured Shots</h3>
-  <p class="text-zinc-400 mb-10">Recent planespotting highlights</p>
+  <section id="photos" class="max-w-7xl mx-auto px-4 py-16">
+    <h3 class="text-3xl font-bold mb-2">Featured Shots</h3>
+    <p class="text-zinc-400 mb-10">Recent planespotting highlights</p>
 
-  <div class="grid md:grid-cols-3 gap-6">
+    <div class="photo-grid">
+      <!-- CARD 1 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/1.jpeg" alt="RAF Red Arrows with red, white, blue smoke">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">A high detail, beautiful photo of the RAF Red Arrows flying over with red, white, and blue smoke.</p>
+          <a href="/img/2026jul/1.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
 
-    <!-- CARD 1 -->
-    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
-      <img src="/img/2026june/img1.JPG" alt="Aircraft photo" class="w-full h-56 object-cover">
-      <div class="p-5">
-        <h4 class="font-semibold">June 2026</h4>
-        <p class="text-sm text-zinc-400">
-          BOS • Lufthansa's 100th anniversary livery Airbus A380 (D-AIMH)
-        </p>
+      <!-- CARD 2 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/2.jpeg" alt="USAF C-17 East Coast Demo Team">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">A giant USAF C-17 from the East Coast Demo Team flying by!</p>
+          <a href="/img/2026jul/2.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
 
-        <a href="/img/2026june/img1.JPG"
-           target="_blank"
-           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
-          View Full Quality
-        </a>
+      <!-- CARD 3 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/3.jpeg" alt="4 Blue Angels F/A-18 Super Hornets">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">A majestic shot of 4 Blue Angels F/A-18 Super Hornets flying closely together, showing their beauty.</p>
+          <a href="/img/2026jul/3.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/4.jpeg" alt="C-17 Demo Team landing">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">The C-17 Demo Team landing their giant bird!</p>
+          <a href="/img/2026jul/4.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/5.jpeg" alt="7 RAF Red Arrows with red and blue smoke">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">All 7 RAF Red Arrows flying together with red and blue smoke.</p>
+          <a href="/img/2026jul/5.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/6.jpeg" alt="F-35 climbing">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">A beautiful F-35 during a climb.</p>
+          <a href="/img/2026jul/6.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/7.jpeg" alt="2 Red Arrows, one with red smoke">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">2 Red Arrows, one with red smoke.</p>
+          <a href="/img/2026jul/7.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/8.jpeg" alt="F-35 climbing with afterburner">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">A beautiful F-35 climbing with afterburner on.</p>
+          <a href="/img/2026jul/8.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 9 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/9.jpeg" alt="C-17 East Coast Demo Team final approach">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">A C-17 of the East Coast Demo Team flying by again for its final approach.</p>
+          <a href="/img/2026jul/9.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 10 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/10.jpeg" alt="Lufthansa A340 and 747 anniversary livery">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">An... interesting picture of a Lufthansa A340 and Lufthansa 747 in the 100th anniversary livery, during not so great photo weather.</p>
+          <a href="/img/2026jul/10.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 11 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/11.jpeg" alt="Blue Angels with afterburner">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">Several Blue Angels flying together with pink and orange afterburner flame.</p>
+          <a href="/img/2026jul/11.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 12 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/12.jpeg" alt="Warbird Thunder SNJ-2 & SNJ-3">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">2 Warbird Thunder North American SNJ-2 & SNJ-3s flying together.</p>
+          <a href="/img/2026jul/12.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 13 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/13.jpeg" alt="Two SNJs with vintage C-47">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">Two Warbird Thunder SNJs flying with a vintage WWII C-47, a Douglas DC-3 variant.</p>
+          <a href="/img/2026jul/13.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 14 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/14.jpeg" alt="Blue Angel #1 climb">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">Blue Angel #1 doing a majestic climb in front of the crowd.</p>
+          <a href="/img/2026jul/14.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
+      </div>
+
+      <!-- CARD 15 -->
+      <div class="photo-card">
+        <img src="/img/2026jul/15.jpeg" alt="Red Arrows red white blue knot">
+        <div class="card-body">
+          <h4 class="font-semibold text-lg">July 2026</h4>
+          <p class="text-sm text-zinc-400">The Red Arrows doing a beautiful red white and blue knot in the sky!</p>
+          <a href="/img/2026jul/15.jpeg" target="_blank" class="inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">View Full Quality</a>
+        </div>
       </div>
     </div>
-
-    <!-- CARD 2 -->
-    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
-      <img src="/img/2026june/img2.png" alt="Aircraft photo" class="w-full h-56 object-cover">
-      <div class="p-5">
-        <h4 class="font-semibold">June 2026</h4>
-        <p class="text-sm text-zinc-400">
-          BOS • A British Airways Airbus A380
-        </p>
-
-        <a href="/img/2026june/img2.png"
-           target="_blank"
-           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
-          View Full Quality
-        </a>
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
-      <img src="/img/2026june/img3.png" alt="Aircraft photo" class="w-full h-56 object-cover">
-      <div class="p-5">
-        <h4 class="font-semibold">June 2026</h4>
-        <p class="text-sm text-zinc-400">
-          BOS • An Iberia Airbus A321XLR
-        </p>
-
-        <a href="/img/2026june/img3.png"
-           target="_blank"
-           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
-          View Full Quality
-        </a>
-      </div>
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
-      <img src="/img/2026june/img4.png" alt="Aircraft photo" class="w-full h-56 object-cover">
-      <div class="p-5">
-        <h4 class="font-semibold">June 2026</h4>
-        <p class="text-sm text-zinc-400">
-          BOS • A Porter Embraer E195-E2, somewhat rare in the US, as Embraer E2's are not flown by any US airline yet.
-        </p>
-
-        <a href="/img/2026june/img4.png"
-           target="_blank"
-           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
-          View Full Quality
-        </a>
-      </div>
-    </div>
-
-    <!-- CARD 5 -->
-    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
-      <img src="/img/2026june/IMG_1927.JPG" alt="Aircraft photo" class="w-full h-56 object-cover">
-      <div class="p-5">
-        <h4 class="font-semibold">June 2026</h4>
-        <p class="text-sm text-zinc-400">
-          BOS • A rare Sunwing livery Boeing 737 MAX 8, rare due to WestJet acquiring Sunwing and repainting the majority of aircraft in this livery.
-        </p>
-
-        <a href="/img/2026june/IMG_1927.JPG"
-           target="_blank"
-           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
-          View Full Quality
-        </a>
-      </div>
-    </div>
-
-    <!-- CARD 6 -->
-    <div class="rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
-      <img src="/img/2026june/IMG_1363.JPG" alt="Aircraft photo" class="w-full h-56 object-cover">
-      <div class="p-5">
-        <h4 class="font-semibold">June 2026</h4>
-        <p class="text-sm text-zinc-400">
-          BOS • A Southwest Airlines Boeing 737-800.
-        </p>
-
-        <a href="/img/2026june/IMG_1363.JPG"
-           target="_blank"
-           class="mt-4 inline-flex items-center rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white">
-          View Full Quality
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- YOUTUBE -->
   <section id="youtube" class="bg-zinc-900/40 border-y border-zinc-800">
-    <div class="max-w-7xl mx-auto px-4 py-24 grid md:grid-cols-2 gap-12 items-center">
+    <div class="max-w-7xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
       <div>
         <h3 class="text-3xl font-bold mb-4">YouTube Channel</h3>
         <p class="text-zinc-300 mb-6">
@@ -213,17 +286,13 @@
         <a href="https://www.youtube.com/@zoeyaviation" target="_blank" class="inline-block px-6 py-3 rounded-xl bg-red-600 font-semibold hover:bg-red-500">Visit Channel</a>
       </div>
       <div class="rounded-2xl overflow-hidden border border-zinc-800">
-<iframe
-  class="w-full h-80 rounded-2xl border border-zinc-800"
-  src="https://www.youtube.com/embed/videoseries?list=PLFK3iLdFr59fb0RZQp0QYVzM5Vvi_s2P2"
-  allowfullscreen>
-</iframe>
+        <iframe class="w-full h-80 rounded-2xl border border-zinc-800" src="https://www.youtube.com/embed/videoseries?list=PLFK3iLdFr59fb0RZQp0QYVzM5Vvi_s2P2" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="max-w-5xl mx-auto px-4 py-24">
+  <section id="about" class="max-w-5xl mx-auto px-4 py-20">
     <h3 class="text-3xl font-bold mb-4">About Zoey Aviation</h3>
     <p class="text-zinc-300 leading-relaxed">
       I capture high quality aviation photography and videography, focusing on planespotting, airshows, and other aviation events.
@@ -231,26 +300,21 @@
   </section>
 
   <!-- CONTACT -->
-<section id="contact" class="bg-zinc-900/40 border-t border-zinc-800">
-  <div class="max-w-5xl mx-auto px-4 py-24 text-center">
-    <h3 class="text-3xl font-bold mb-4">Get in Touch</h3>
-    <p class="text-zinc-300 mb-6">
-      Questions, concerns, or anything else?
-      Email me anytime.
-    </p>
-
-    <a
-      href="mailto:zoey@zoeyaviation.com"
-      class="inline-block px-6 py-3 rounded-xl bg-sky-500 text-black font-semibold hover:bg-sky-400"
-    >
-      zoey@zoeyaviation.com
-    </a>
-  </div>
-</section>
+  <section id="contact" class="bg-zinc-900/40 border-t border-zinc-800">
+    <div class="max-w-5xl mx-auto px-4 py-20 text-center">
+      <h3 class="text-3xl font-bold mb-4">Get in Touch</h3>
+      <p class="text-zinc-300 mb-6">
+        Questions, concerns, or anything else? Email me anytime.
+      </p>
+      <a href="mailto:zoey@zoeyaviation.com" class="inline-block px-6 py-3 rounded-xl bg-sky-500 text-black font-semibold hover:bg-sky-400">
+        zoey@zoeyaviation.com
+      </a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="border-t border-zinc-800 bg-zinc-950">
-    <div class="max-w-7xl mx-auto px-4 py-8 text-sm text-zinc-500 flex justify-between">
+    <div class="max-w-7xl mx-auto px-4 py-8 text-sm text-zinc-500 flex flex-col sm:flex-row justify-between items-center gap-2">
       <span>© 2026 Zoey Aviation - Updated 6/29/2026</span>
       <span>zoeyaviation.com</span>
     </div>
